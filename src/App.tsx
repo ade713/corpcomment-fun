@@ -1,9 +1,13 @@
 function App() {
   return (
     <>
-      here we go!
+      <Footer />
+
+      <Container />
+
+      <HashtagList />
     </>
-  )
+  );
 }
 
 export default App
