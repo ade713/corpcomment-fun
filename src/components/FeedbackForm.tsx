@@ -4,7 +4,7 @@ import { MAX_CHARACTERS } from "./lib/constants";
 export function FeedbackForm() {
   const [text, setText] = useState('');
 
-  const handleOnChange = (e) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
     const newText = e.target.value;
     if (newText.length > MAX_CHARACTERS) return;
 
