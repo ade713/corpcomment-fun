@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <small>
         <p>&copy; Copyright by ByteGrad. Intended for learning / portfolio</p>
         <p><span className="u-bold u-italic">Not allowed</span> to use as your own teaching material.</p>
