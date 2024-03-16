@@ -5,7 +5,10 @@ export function FeedbackForm() {
   const [text, setText] = useState('');
 
   const handleOnChange = (e) => {
-    setText(e.target.value);
+    const newText = e.target.value;
+    if (newText.length > MAX_CHARACTERS) return;
+
+    setText(newText);
   }
 
   const charactersLeft = MAX_CHARACTERS - text.length;
