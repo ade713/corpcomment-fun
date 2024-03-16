@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MAX_CHARACTERS } from "./lib/constants";
+import { MAX_CHARACTERS } from "../lib/constants";
 
 export function FeedbackForm() {
   const [text, setText] = useState('');
