@@ -30,7 +30,9 @@ export function FeedbackItem({ feedbackItem }: FeedbackItemProps) {
           <p>{text}</p>
         </div>
 
-        <p>{daysAgo}d</p>
+        <p>
+          { daysAgo === 0 ? 'NEW' : `${daysAgo}d` }
+        </p>
       </li>
   );
 }
