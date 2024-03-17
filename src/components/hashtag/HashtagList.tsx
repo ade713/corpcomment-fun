@@ -6,6 +6,11 @@ type HashtagListProps = {
 };
 
 export function HashtagList({ companyList, handleSelectedCompany }: HashtagListProps) {
+  const handleClickClearSelection = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    handleSelectedCompany('');
+    e.currentTarget.blur();
+  };
+
   return (
     <ul className="hashtags">
       { companyList.map(company => (
@@ -15,6 +20,12 @@ export function HashtagList({ companyList, handleSelectedCompany }: HashtagListP
             onSelectedCompany={handleSelectedCompany}
           />
         ))
+      }
+      { companyList.length > 0 ?
+        <li>
+          <button onClick={handleClickClearSelection}>Clear Selection</button>
+        </li> :
+        null
       }
     </ul>
   );
