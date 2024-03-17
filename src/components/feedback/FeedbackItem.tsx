@@ -19,14 +19,18 @@ export function FeedbackItem({ feedbackItem }: FeedbackItemProps) {
 
   const handleToggleFeedBackItem = () => setOpen(prev => !prev);
 
-  const handleIncreaseUpvoteCount = () => setUpvoteCount(prev => ++prev);
+  const handleUpvoteCount = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    setUpvoteCount(prev => ++prev);
+    e.currentTarget.disabled = true;
+    e.stopPropagation();
+  };
 
   return (
     <li
       className={`feedback ${open ? "feedback--expand" : ''}`}
       onClick={handleToggleFeedBackItem}
     >
-        <button onClick={handleIncreaseUpvoteCount}>
+        <button onClick={handleUpvoteCount}>
           <TriangleUpIcon />
           <span>{upvoteCount}</span>
         </button>
