@@ -1,11 +1,9 @@
+import { useFeedbackItemsContext } from "../../lib/hooks";
 import { HashtagItem } from "./HashtagItem";
 
-type HashtagListProps = {
-  companyList: string[];
-  handleSelectedCompany: (company: string) => void;
-};
+export function HashtagList() {
+  const { companyList, handleSelectedCompany } = useFeedbackItemsContext();
 
-export function HashtagList({ companyList, handleSelectedCompany }: HashtagListProps) {
   const handleClickClearSelection = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     handleSelectedCompany('');
     e.currentTarget.blur();
