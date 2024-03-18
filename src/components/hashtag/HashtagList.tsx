@@ -1,11 +1,12 @@
-import { useFeedbackItemsContext } from "../../lib/hooks";
+import { useFeedbackItemsStore } from "../../stores/feedbackItemsStore";
 import { HashtagItem } from "./HashtagItem";
 
 export function HashtagList() {
-  const { companyList, handleSelectedCompany } = useFeedbackItemsContext();
+  const companyList = useFeedbackItemsStore(state => state.getCompanyList());
+  const selectCompany = useFeedbackItemsStore(state => state.selectCompany);
 
   const handleClickClearSelection = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    handleSelectedCompany('');
+    selectCompany('');
     e.currentTarget.blur();
   };
 
@@ -15,7 +16,7 @@ export function HashtagList() {
           <HashtagItem
             key={company}
             company={company}
-            onSelectedCompany={handleSelectedCompany}
+            onSelectedCompany={selectCompany}
           />
         ))
       }
