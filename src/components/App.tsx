@@ -15,12 +15,11 @@ function App() {
     <div className="app">
       <Footer />
 
-    <FeedbackItemsContextProvider>
-      <Container />
+      <FeedbackItemsContextProvider>
+        <Container />
 
-      <HashtagList />
-    </FeedbackItemsContextProvider>
-
+        <HashtagList />
+      </FeedbackItemsContextProvider>
     </div>
   );
 }
